@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Glennaquoich | Music Production</title>
+    <meta
+      name="description"
+      content="An independent Edinburgh-based record label focussing on acoustic and experimental music."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #ce8b1f;
+        --bg-alt: #188ba0f5;
+        --card: #2c1b1b;
+        --text: #f5f5f7;
+        --muted: #b4b7c6;
+        --accent: #c2a74f;
+        --accent-soft: rgba(194, 167, 79, 0.15);
+        --border: rgba(255, 255, 255, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at top, var(--bg) 0%, #0b0b12 55%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 96px 8vw 48px;
+      }
+
+      .hero-inner {
+        max-width: 880px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        width: clamp(120px, 20vw, 200px);
+        height: auto;
+        margin-bottom: 24px;
+        filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: clamp(40px, 6vw, 72px);
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .lead {
+        font-size: clamp(18px, 2vw, 22px);
+        color: var(--muted);
+        margin-bottom: 32px;
+      }
+
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .button {
+        border-radius: 999px;
+        padding: 12px 26px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        transition: all 0.2s ease;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: #1a1b2c;
+      }
+
+      .button.primary:hover {
+        filter: brightness(1.05);
+        transform: translateY(-1px);
+      }
+
+      .button.ghost {
+        border-color: var(--border);
+        color: var(--text);
+      }
+
+      .button.ghost:hover {
+        border-color: var(--accent);
+      }
+
+      .section {
+        padding: 56px 8vw;
+      }
+
+      .section.alt {
+        background: var(--bg-alt);
+      }
+
+      .section-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .section h2 {
+        font-size: clamp(28px, 3vw, 36px);
+        margin-bottom: 16px;
+      }
+
+      .section p {
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+
+      .section-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 32px;
+      }
+
+      .release-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .release-card {
+        background: var(--card);
+        padding: 24px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .release-card h3 {
+        font-size: 20px;
+      }
+
+      .release-cover {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+      }
+
+      .release-link {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .release-link:hover {
+        text-decoration: underline;
+      }
+
+      .release-meta {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .platforms {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .platforms a {
+        background: var(--accent-soft);
+        color: var(--accent);
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 13px;
+        border: 1px solid transparent;
+      }
+
+      .platforms a:hover {
+        border-color: var(--accent);
+      }
+
+      .contact-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        color: var(--accent);
+        margin-top: 12px;
+      }
+
+      .footer {
+        margin-top: auto;
+        padding: 32px 8vw 48px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding-top: 72px;
+        }
+
+        .cta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-inner">
+          <img
+            class="logo"
+            src="Glennaquoich_logo.svg"
+            alt="Glennaquoich logo"
+          />
+          <p class="eyebrow">Edinburgh · Music Production</p>
+          <h1>Glennaquoich</h1>
+          <p class="lead">
+            An independent Edinburgh-based record label
+            focused on acoustic and experimental music.
+          </p>
+          <div class="cta">
+            <a class="button primary" href="#releases">New releases</a>
+            <a class="button ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="about" class="section">
+          <div class="section-inner">
+            <h2>About Glennaquoich</h2>
+            <p>
+              We blend analogue warmth with forward-facing production to build
+              music that feels immersive, emotional, and unforgettable. From
+              collaborative studio sessions to bespoke scoring, we craft
+              soundtracks that elevate every release.
+            </p>
+            <p>
+              Based in the heart of Edinburgh, Glennaquoich partners with
+              independent artists and labels around the world.
+            </p>
+          </div>
+        </section>
+
+        <section id="releases" class="section alt">
+          <div class="section-inner">
+            <div class="section-header">
+              <h2>New releases</h2>
+              <p>Listen on your favourite platform.</p>
+            </div>
+            <div class="release-grid">
+              <article class="release-card">
+                <img
+                  class="release-cover"
+                  src="Album_Cover.png"
+                  alt="Debut Release album cover"
+                />
+                <div>
+                  <h3>Debut Release</h3>
+                  <p class="release-meta">Album · 20 March 2026</p>
+                </div>
+                <a class="release-link" href="debut-release.html">
+                  More information about this album
+                </a>
+                <div class="platforms">
+                  <a href="#">Apple Music</a>
+                  <a href="#">Spotify</a>
+                  <a href="#">Qobuz</a>
+                  <a href="#">Amazon Music</a>
+                  <a href="#">TikTok</a>
+                  <a href="#">Tidal</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <div class="section-inner">
+            <h2>Contact</h2>
+            <p>For releases, collaborations, or bookings, reach out:</p>
+            <a class="contact-email" href="mailto:info@glennaquoich.com">
+              info@glennaquoich.com
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        © 2026 Glennaquoich. All rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>
