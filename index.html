@@ -81,6 +81,41 @@
         margin-bottom: 18px;
       }
 
+      .glenna-title {
+        position: relative;
+        display: inline-block;
+        cursor: help;
+      }
+
+      .glenna-title-tooltip {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 12px);
+        width: min(560px, 80vw);
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: rgba(11, 11, 18, 0.95);
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.45;
+        box-shadow: 0 14px 26px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+        pointer-events: none;
+        z-index: 12;
+      }
+
+      .glenna-title:hover .glenna-title-tooltip,
+      .glenna-title:focus-visible .glenna-title-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
       .lead {
         font-size: clamp(18px, 2vw, 22px);
         color: var(--muted);
@@ -248,10 +283,11 @@
             alt="Glennaquoich logo"
           />
           <p class="eyebrow">Edinburgh · Music Production</p>
-          <h1
-            title="This is the fictional ancestral home of Fergus Mac-Ivor (aka Vich Ian Vohr) and his sister Flora where the young Edward Waverley is kidnapped by and then falls in love with both of them"
-          >
+          <h1 class="glenna-title" tabindex="0">
             Glennaquoich
+            <span class="glenna-title-tooltip">
+              This is the fictional ancestral home of Fergus Mac-Ivor (aka Vich Ian Vohr) and his sister Flora where the young Edward Waverley is kidnapped by and then falls in love with both of them
+            </span>
           </h1>
           <p class="lead">
             An independent Edinburgh-based record label focussed
